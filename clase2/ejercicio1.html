@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lista = [3,6,-4,8,10,-15,30,0,-12,20];
+        const resultados = {
+            cantidadPositivos : 0,
+            totalPositivos : 0,
+            cantidadNegativos : 0,
+            totalNegativos : 0,
+            totalNumerosMayoresaOcho : 0
+        }
+        for(let i = 0; i < lista.length; i++) {
+            if (lista[i] > 0) {
+                resultados.cantidadPositivos ++;
+                resultados.totalPositivos += lista[i];
+                if( lista[i] > 8 ) resultados.totalNumerosMayoresaOcho += lista[i];
+            } else if ( lista[i] < 0) {
+                resultados.cantidadNegativos ++;
+                resultados.totalNegativos += lista[i]
+            }
+        }
+        console.log(resultados);
+    </script>
+</body>
+</html>

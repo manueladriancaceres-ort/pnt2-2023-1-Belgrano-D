@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cliente = {
+            id: 100,
+            nombre: "Juan"
+        }
+        console.log(cliente);
+        console.log(cliente.id);
+        console.log(cliente.nombre);
+        console.log(cliente["id"]);
+        console.log(cliente["nombre"]);
+        const nVar = "nombre";
+        console.log(cliente[nVar]);
+        cliente.apellido = "Gomez";
+        console.log(cliente);
+        cliente.alias = "JG";
+        delete cliente.alias;
+        console.log(cliente);
+    </script>
+</body>
+</html>
