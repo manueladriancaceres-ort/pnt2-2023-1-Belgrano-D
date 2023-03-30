@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Lista de nombres de repuestos
+        let nombresRepuestos = ["bomba de agua", "correa de distribución", "aceite", "junta sello eje", "bujías"];
+
+        // Lista de precios
+        let preciosRepuestos = [15000, 3000, 3500, 5000, 2000];
+
+        // Lista de repuestos con precios mayores a 3000
+        let mayoresA3000 = [];
+        // Lista de repuestos con precios menores o iguales a 3000
+        let menoresOIgualA3000 = [];
+
+        // Recorremos las dos listas al mismo tiempo para agregar cada repuesto a la lista correspondiente
+        for (let i = 0; i < nombresRepuestos.length; i++) {
+            if (preciosRepuestos[i] > 3000) {
+                mayoresA3000.push(nombresRepuestos[i]);
+            } else {
+                menoresOIgualA3000.push(nombresRepuestos[i]);
+            }
+        }
+
+        // Mostramos las dos listas por la consola del navegador
+        console.log("Repuestos con precios mayores a 3000: ", mayoresA3000);
+        console.log("Repuestos con precios menores o iguales a 3000: ", menoresOIgualA3000);
+
+    </script>
+</body>
+</html>

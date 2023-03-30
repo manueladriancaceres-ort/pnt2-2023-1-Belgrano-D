@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lista = [5,6,9,6];
+        lista.push(9);
+        console.log(lista);
+        console.log("Cantidad de elementos " + lista.length);
+        lista.push(11);
+        lista.pop();
+        console.log(lista);
+
+        console.log("Desde una funciona " + cantidadElementos(lista));
+        console.log(calcularAlgo());
+
+        console.log("30"===30);
+        
+        function cantidadElementos(lista) {
+            return lista.length
+        }
+
+        function calcularAlgo() {
+            let j = 10;
+        }
+    </script>
+</body>
+</html>

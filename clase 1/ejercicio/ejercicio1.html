@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lista = [3,-2,3,10,12,-14,-8];
+        const resultado = [0,0,0,0,0];
+
+        for (let i = 0; i < lista.length; i++) {
+            if (lista[i] > 0) {
+                resultado[0]++;
+                resultado[2] += lista[i];
+                if (lista[i] > 3) {
+                    resultado[4]++;
+                }
+            } else if (lista[i] < 0) {
+                resultado[1]++;
+                resultado[3] += lista[i];
+            }
+        }
+
+        console.log("Contador de positivos: " + resultado[0]);
+        console.log("Contador de negativos:  " + resultado[1]);
+        console.log("Acumulador de positivos:  " + resultado[2]);
+        console.log("Acumulador de negativos:  " + resultado[3]);
+        console.log("Contador de números mayores a 3:  " + resultado[4]);
+
+    </script>
+</body>
+</html>

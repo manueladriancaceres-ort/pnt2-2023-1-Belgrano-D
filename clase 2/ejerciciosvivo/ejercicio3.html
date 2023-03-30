@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const polizas = [{ poliza: 123, patente: 'AA345FD', cantidad_cuotas: 12, pagadas: [1, 2, 3, 4]},
+        { poliza: 124, patente: 'AA500RR', cantidad_cuotas: 6, pagadas: [1, 2, 3, 4]},
+        { poliza: 125, patente: 'AA200AA', cantidad_cuotas: 12, pagadas: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
+        { poliza: 126, patente: 'AA300SH', cantidad_cuotas: 8, pagadas: [1, 2]}]
+
+        const polizasConDueda = [];
+        for(let i=0; i < polizas.length; i++) {
+            polizaConDueda = polizas[i];
+            polizaConDueda.deudas = [];
+            for(let j= polizaConDueda.pagadas.length+1; j <= polizaConDueda.cantidad_cuotas; j++) {
+                polizaConDueda.deudas.push(j);
+            }
+            delete polizaConDueda.pagadas;
+            polizasConDueda.push(polizaConDueda);
+        }
+
+        console.log(polizasConDueda);
+    </script>
+</body>
+
+</html>
