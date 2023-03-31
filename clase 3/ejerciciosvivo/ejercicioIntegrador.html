@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const recibos = [
+            { numero: 1000, importe: 1500, fecha: 20230320 },
+            { numero: 1001, importe: 2300, fecha: 20230319 },
+            { numero: 1002, importe: 2100, fecha: 20230318 }
+        ];
+
+        // Tendria que hacer una copia para no perder el orden original
+        const recibosPorFechaAscendente = [...recibos].sort((a, b) => a.fecha - b.fecha);
+        console.log(recibosPorFechaAscendente);
+
+        // Nueva lista de recibos con importe mayor a 2100.
+        const recibosImporteMayorA2100 = recibos.filter(recibo => recibo.importe > 2100);
+        console.log(recibosImporteMayorA2100);
+
+        // Nueva lista con un aumento del importe del 30%.
+        const recibosAumento30Porciento = recibos.map(recibo => ({ ...recibo, importe: recibo.importe * 1.3 }));
+        console.log(recibosAumento30Porciento);
+
+        // Suma total de importes de la lista de recibos.
+        const sumaTotalImportes = recibos.reduce((acumulador, recibo) => acumulador + recibo.importe, 0);
+        console.log(sumaTotalImportes);
+
+        // Suma total de importes menores a 2500 de la lista de recibos, restando un 20% al importe.
+        const sumaTotalImportesMenoresA2500Menos20Porciento = recibos.filter(recibo => recibo.importe < 2500).reduce((acumulador, recibo) => acumulador + recibo.importe * 0.8, 0);
+        console.log(sumaTotalImportesMenoresA2500Menos20Porciento);
+
+    </script>
+</body>
+
+</html>

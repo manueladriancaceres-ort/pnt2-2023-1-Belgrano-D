@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         console.log("Filter");
@@ -19,8 +21,52 @@
         console.log("Filter de lista de objetos");
         const gestionesIdMayoraUno = gestiones.filter(g => g.id > 1);
         console.log(gestionesIdMayoraUno);
+
+        console.log("Ejercicio Filter 1");
+        const listaDeNumeros = [1, 2, 3, 4, 5];
+        const fnumeros = (lista, numero) => lista.filter(e => e < numero)
+        console.log(fnumeros(listaDeNumeros, 2));
+
+        console.log("Ejercicio Filter 2");
+        const ncs = [{ id: 100, descripcion: "prov1", precio: 1000 },
+        { id: 102, descripcion: "prov2", precio: 1300 },
+        { id: 103, descripcion: "prov3", precio: 600 }];
+
+        const fprecios = (numero) => { return ncs.filter(e => e.precio < numero) }
+        console.log(fprecios(1200))
+
+        console.log("Ejemplo reduce 1");
+        console.log(lista.reduce((a, n) => a + n, 0));
+
+        console.log("Ejemplo reduce con lista de objetos");
+        console.log(gestiones.reduce((a, b) => a + b.id, 0));
+
+        console.log("Ejercicio reduce 1");
+        const lNumeros = [4, 3, -2, 5, 8, -12, 10];
+        console.log(lNumeros.reduce((a, b) => a + b, 100));
+
+        console.log("Ejercicio reduce 2");
+        const recibos = [
+            { numero: 1000, importe: 1500 },
+            { numero: 1001, importe: 2300 },
+            { numero: 1002, importe: 2100 }
+        ]
+        console.log(recibos.reduce((a, b) => a + b.importe, 0));
+
+        console.log('Ejemplo sort');
+        const numeros = [2,3,6,10,20,35,1,5];
+        const numerosOrdenAlfa = [...numeros];
+        console.log(numerosOrdenAlfa.sort());
+        const numerosOrdenNumerico = [...numeros];
+        console.log(numerosOrdenNumerico.sort((a,b)=>a-b));
+
         
+
+
+
+
 
     </script>
 </body>
+
 </html>
