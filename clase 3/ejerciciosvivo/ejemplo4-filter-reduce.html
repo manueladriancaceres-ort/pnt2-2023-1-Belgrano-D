@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Filter");
+        const lista = [3, 45, 6, -6, 40, 32, 23];
+        const listaMenoresaDiez = lista.filter(n => n < 10);
+        console.log(listaMenoresaDiez);
+
+        const gestiones = [{ id: 1, fecha: '20230330', resultado: 'llamar depues' },
+        { id: 2, fecha: '20230330', resultado: 'Venta zapatilla' }];
+
+        console.log("Filter de lista de objetos");
+        const gestionesIdMayoraUno = gestiones.filter(g => g.id > 1);
+        console.log(gestionesIdMayoraUno);
+        
+
+    </script>
+</body>
+</html>

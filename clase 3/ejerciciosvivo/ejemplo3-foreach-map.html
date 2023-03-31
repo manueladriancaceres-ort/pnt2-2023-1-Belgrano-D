@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log("Ejemplo vivo 1");
+        const lista = [3, 45, 6, -6, 40, 32, 23];
+        lista.forEach(e => console.log(e));
+
+        console.log("Ejemplo map vivo 2");
+        const gestiones = [{ id: 1, fecha: '20230330', resultado: 'llamar depues' },
+        { id: 2, fecha: '20230330', resultado: 'Venta zapatilla' }];
+        gestiones.forEach(g =>
+            console.log(`id ${g.id} resulado ${g.resultado}`));
+
+
+        console.log('Crear una nueva lista, sumando 5 a cada elemento');
+        console.log(lista.map(e => e + 5));
+
+        console.log('Crear una nueva lista de gestiones, solo id y resultado en mayuscula');
+        console.log(gestiones.map(g => { return { id: g.id, resultado: g.resultado.toUpperCase() } }));
+
+        console.log("Map, ejercicio 1");
+        const listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const nuevaLista = listaNumeros.map(e => e * 5);
+        console.log(nuevaLista);
+
+        console.log("Map, ejercicio 2");
+        const listaPrecios = [100, 120, 300, 230, 320]
+        const listaImpuestos = listaPrecios.map(e => e *1.21)
+        console.log(listaImpuestos);
+
+        console.log("Map, ejercicio 3");
+        const comprobante = [
+            {id:100,descripcion:'prov1',precio:1000},
+            {id:102,descripcion:'prov2',precio:1300}
+        ];
+        const nuevaLista1 = comprobante.map(e => {return{id:e.id,descripcion:e.descripcion,precio:e.precio * 1.21}})
+        console.log(nuevaLista1);
+
+        
+
+    </script>
+</body>
+
+</html>
