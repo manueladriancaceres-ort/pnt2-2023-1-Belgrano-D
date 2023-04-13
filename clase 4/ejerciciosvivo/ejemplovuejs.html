@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p :style="{color:nColor,fontSize:nFontSize}" >{{ mensaje }}</p>
+        <p v-if="verParrafo">Nuevo parrafo</p>
+        <li v-for="p in productos">
+            {{p.id}} {{p.desc}} {{p.precio}}
+        </li>
+        <button v-on:click="ordenarPorId">Ordenar por id</button>
+        </br>
+        Filtro <input type="number" v-model="filtro">
+        <button v-on:click="filtrar">Filtrar por precio</button>
+    </div>
+    <script>
+        const { createApp } = Vue
+        const obj = createApp({
+            data() {
+                return {
+                    mensaje: 'Hola vue',
+                    nColor: 'green',
+                    nFontSize: '20px',
+                    verParrafo: false,
+                    filtro:'',
+                    productos: [
+                        {id:500,desc:'Cancha papi1',precio:150},
+                        {id:200,desc:'Cancha futbol6',precio:1500},
+                        {id:150,desc:'Cancha de 11',precio:1000}
+                    ]
+                }
+            },
+            methods: {
+                ordenarPorId() {
+                    obj.productos.sort((a,b)=>a.id-b.id)
+                },
+                filtrar() {
+                    console.log('filtrar');
+                    this.productos = this.productos.filter(p=>p.precio==this.filtro)
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
