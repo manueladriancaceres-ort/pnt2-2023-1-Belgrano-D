@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <li v-for="c in clientes">
+            {{ c.id }} {{ c.nombre }} {{ c.edad}}
+            <button v-on:click="eliminar(c)">Eliminar</button>
+            <button v-on:Click="modificar(c)">Modificar</button>
+        </li>
+        Id: <input type="text" v-model="cliente.id">
+        Nombre: <input type="text" v-model="cliente.nombre">
+        Edad: <input type="text" v-model="cliente.edad">
+        <button v-on:click="agregar">Agregar</button>
+    </div>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    clientes: [
+                        {id: 100, nombre: 'Pedro', edad: 25},
+                        {id: 110, nombre: 'Juan', edad: 30},
+                        {id: 130, nombre: 'Ana', edad: 26}
+                    ],
+                    cliente: {}
+                }
+            },
+            methods: {
+                agregar() {
+                    console.log("Agregar");
+                    this.clientes.push({...this.cliente})
+                },
+                eliminar(c) {
+                    let index = this.clientes.indexOf(c);
+                    this.clientes.splice(index,1);
+                },
+                modificar(c) {
+                    let index = this.clientes.indexOf(c);
+                    this.clientes[index] = {...this.cliente};  
+                    this.cliente = {}  
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
