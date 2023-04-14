@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <li v-for="n in lista">
+            {{ n }}
+            <button v-on:click="eliminar(n)">Eliminar</button>
+            <button v-on:click="modificar(n)">Modificar</button>
+        </li>
+        Numero <input type="text" v-model="numero">
+        <button v-on:click="agregar">Agregar</button>
+    </div>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    lista: [4,6,3,2,-3],
+                    numero: 0
+                }
+            },
+            methods: {
+                agregar() {
+                    this.lista.push(this.numero);
+                },
+                eliminar(n) {
+                    // opcion 1
+                    // let index = this.lista.indexOf(n);
+                    // this.lista.splice(index,1);
+                    // opcion 2
+                    this.lista = this.lista.filter(e=>e!=n);
+                },
+                modificar(n) {
+                    let index = this.lista.indexOf(n);
+                    this.lista[index] = this.numero;
+                    this.numero = 0;
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

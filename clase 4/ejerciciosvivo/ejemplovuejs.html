@@ -41,7 +41,6 @@
                     obj.productos.sort((a,b)=>a.id-b.id)
                 },
                 filtrar() {
-                    console.log('filtrar');
                     this.productos = this.productos.filter(p=>p.precio==this.filtro)
                 }
             }
